@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>SaathiAssist — Everyday Help, Trusted Locally</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-mark">S</span><span>SaathiAssist</span></a>
+  <nav>
+    <a href="#find">Find Assistant</a><a href="#services">Services</a><a href="#safety">Safety</a><a href="#pricing">Pricing</a>
+  </nav>
+  <button class="btn btn-outline" onclick="openLogin()">Login / OTP</button>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <span class="pill">YOUR LOCAL HELP PARTNER</span>
+    <h1>Everyday help.<br><em>Trusted Saathi.</em></h1>
+    <p>Find reliable people for errands, home help, senior support, shopping, companionship and everyday tasks.</p>
+    <div class="hero-actions"><a class="btn" href="#find">Find an Assistant</a><a class="btn btn-light" href="#register">Become an Assistant</a></div>
+    <div class="trust-row"><span>✓ Verified profiles</span><span>✓ Transparent pricing</span><span>✓ Safety first</span></div>
+  </div>
+  <div class="hero-card">
+    <div class="mini-top"><span>Popular near you</span><span>● Live</span></div>
+    <div class="assistant-mini"><div class="avatar">RK</div><div><b>Ravi Kumar</b><small>Errands · Shopping</small><span class="rating">★ 4.9 · 128 jobs</span></div><strong>₹199+</strong></div>
+    <div class="assistant-mini"><div class="avatar alt">AS</div><div><b>Anita Shah</b><small>Senior support · Companion</small><span class="rating">★ 4.8 · 96 jobs</span></div><strong>₹249+</strong></div>
+    <div class="safe-note">🛡️ Every booking includes SaathiAssist safety support.</div>
+  </div>
+</section>
+
+<section class="stats"><div><b>10+</b><span>Service types</span></div><div><b>₹199</b><span>Starting from</span></div><div><b>4.8★</b><span>Target rating</span></div><div><b>24/7</b><span>Booking access</span></div></section>
+
+<section id="find" class="section">
+  <div class="section-head"><div><span class="eyebrow">FIND HELP</span><h2>What do you need today?</h2></div><span class="location">📍 Mumbai <button onclick="changeLocation()">Change</button></span></div>
+  <div class="searchbar"><input id="search" placeholder="Search service, e.g. grocery shopping"><button onclick="filterServices()">Search</button></div>
+  <div id="serviceGrid" class="grid"></div>
+</section>
+
+<section id="services" class="section tinted">
+  <div class="section-head"><div><span class="eyebrow">HOW IT WORKS</span><h2>Simple from start to finish</h2></div></div>
+  <div class="steps"><div><span>01</span><h3>Choose a service</h3><p>Tell us what you need and when.</p></div><div><span>02</span><h3>Pick your Saathi</h3><p>Compare profiles, ratings and prices.</p></div><div><span>03</span><h3>Book securely</h3><p>Confirm the task and payment.</p></div><div><span>04</span><h3>Get it done</h3><p>Rate the experience and help us improve.</p></div></div>
+</section>
+
+<section id="register" class="section">
+  <div class="split"><div><span class="eyebrow">FOR SERVICE PROVIDERS</span><h2>Earn by helping people nearby.</h2><p>Set your availability, choose services you are comfortable with and receive booking requests.</p><ul class="checks"><li>Choose your own services</li><li>Set your availability</li><li>Transparent earnings</li><li>Profile verification</li></ul></div>
+  <form class="card form" onsubmit="registerAssistant(event)"><h3>Assistant registration</h3><input required placeholder="Full name"><input required type="tel" placeholder="Mobile number"><select required><option value="">Select main service</option><option>Errands & Shopping</option><option>Home Help</option><option>Senior Support</option><option>Companionship</option><option>Other</option></select><input placeholder="City / Area"><button class="btn">Register interest</button><small>Demo form — connect OTP/backend before launch.</small></form></div>
+</section>
+
+<section id="safety" class="section dark">
+  <div class="section-head"><div><span class="eyebrow">SAFETY</span><h2>Designed around trust.</h2></div></div>
+  <div class="safety-grid"><div><b>Identity & profile checks</b><p>Verification can be completed before an assistant is approved.</p></div><div><b>Booking trail</b><p>Keep booking details, status and support information together.</p></div><div><b>Report & support</b><p>Give customers an easy way to report an issue or request help.</p></div><div><b>Payment protection</b><p>Use a verified payment gateway before accepting real money.</p></div></div>
+</section>
+
+<section id="pricing" class="section">
+  <div class="section-head"><div><span class="eyebrow">PRICING</span><h2>Clear, simple plans</h2></div></div>
+  <div class="pricing"><div class="price-card"><span>Customer</span><h3>Pay per booking</h3><strong>From ₹199</strong><p>Final price depends on service, duration and location.</p><button class="btn" onclick="alert('Choose a service to see a booking price.')">Start booking</button></div><div class="price-card featured"><span>Assistant</span><h3>Join SaathiAssist</h3><strong>Flexible</strong><p>Register free in this demo. Commission and payout rules can be configured before launch.</p><button class="btn" onclick="document.querySelector('#register').scrollIntoView({behavior:'smooth'})">Register</button></div></div>
+</section>
+
+<section id="admin" class="section tinted">
+  <div class="section-head"><div><span class="eyebrow">ADMIN PREVIEW</span><h2>Control centre</h2></div></div>
+  <div class="admin-grid"><div class="admin-card"><span>Bookings today</span><b>24</b></div><div class="admin-card"><span>Assistants</span><b>86</b></div><div class="admin-card"><span>Pending verification</span><b>7</b></div><div class="admin-card"><span>Support cases</span><b>3</b></div></div>
+  <p class="note">This is a front-end demonstration. Real admin authentication, database, OTP, payments and verification must be connected before production.</p>
+</section>
+</main>
+
+<footer><div><a class="brand" href="#home"><span class="brand-mark">S</span><span>SaathiAssist</span></a><p>Everyday help, trusted locally.</p></div><div><b>Company</b><a href="#safety">Safety</a><a href="#pricing">Pricing</a><a href="#register">Become an Assistant</a></div><div><b>Support</b><a href="#" onclick="alert('Demo support: connect WhatsApp/phone before launch.');return false;">Help centre</a><a href="#" onclick="openLogin();return false;">Login</a></div></footer>
+
+<div id="loginModal" class="modal"><div class="modal-box"><button class="close" onclick="closeLogin()">×</button><span class="eyebrow">SECURE LOGIN</span><h2>Login with OTP</h2><p>Enter your mobile number. OTP integration will be connected in the next backend phase.</p><input id="phone" type="tel" placeholder="10-digit mobile number"><button class="btn" onclick="sendOtp()">Send OTP</button><div id="otpArea" hidden><input id="otp" maxlength="6" placeholder="Enter OTP"><button class="btn btn-dark" onclick="verifyOtp()">Verify</button></div></div></div>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
